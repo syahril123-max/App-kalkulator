@@ -1,44 +1,97 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 15px;
+}
+
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+input[type="text"] {
+  width: 100%;
+  font-size: 1.5em;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: right;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 15px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s;
+  touch-action: manipulation;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button.operator {
+  background: #2196F3;
+}
+
+button.trig {
+  background: #FF9800;
+}
+
+button.clear {
+  background: #f44336;
+}
+
+/* Responsif untuk layar mobile */
+@media screen and (max-width: 480px) {
   .calculator {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  input[type="text"] {
-    width: 100%;
-    font-size: 1.5em;
-    padding: 10px;
-    margin-bottom: 10px;
-    text-align: right;
-  }
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-  button {
     padding: 15px;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 1em;
+  }
+  
+  input[type="text"] {
     font-size: 1.2em;
-    border: none;
-    border-radius: 10px;
-    background: #4CAF50;
-    color: white;
-    cursor: pointer;
+    padding: 8px;
   }
-  button.operator {
-    background: #2196F3;
+}
+
+/* Responsif untuk layar sangat kecil */
+@media screen and (max-width: 320px) {
+  .calculator {
+    padding: 10px;
   }
-  button.trig {
-    background: #FF9800;
+  
+  .buttons {
+    gap: 5px;
   }
-  button.clear {
-    background: #f44336;
+  
+  button {
+    padding: 8px;
+    font-size: 0.9em;
   }
+}
